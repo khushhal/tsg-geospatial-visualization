@@ -1,54 +1,73 @@
-# React + TypeScript + Vite
+# Turl Street Group Assignment - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the Turl Street Group Assignment project. It connects to the [TSG Geospatial Backend](https://github.com/khushhal/tsg-geospatial-backend) and uses Mapbox for mapping.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Getting Started
 
-## Expanding the ESLint configuration
+### 1. 📥 Clone the Repository
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/your-username/tsg-frontend.git
+cd tsg-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. 🔁 Make Sure Backend is Set Up First
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Before running the frontend, you must have the backend running.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Set up the backend using this repository:
+👉 https://github.com/khushhal/tsg-geospatial-backend
+
+Make sure the backend is fully configured and running on http://127.0.0.1:8000.
+
+### 3. ⚙️ Set Up the Environment Variables
+
+Create a .env file from the provided example:
+
+```bash
+cp .env.example .env
 ```
+
+Then update your .env file with:
+
+```bash
+VITE_API_URL=http://127.0.0.1:8000/api
+VITE_MAPBOX_TOKEN=your_mapbox_token_here
+```
+
+To get your Mapbox access token, sign up and create one from:
+👉 https://account.mapbox.com/access-tokens/
+
+### 4. 📦 Install Dependencies
+
+Make sure you are using Node.js version 18 or higher. You can check your version with:
+
+```bash
+node -v
+```
+
+If you're ready, install the dependencies:
+
+```bash
+npm install
+```
+
+### 5. ▶️ Run the Development Server
+
+```bash
+npm run dev
+```
+
+This will start the Vite dev server, usually at:
+
+```bash
+http://localhost:5173
+```
+
+Make sure your backend (Django API) is running on http://127.0.0.1:8000 before testing the frontend.
+
+## 📬 Questions?
+
+Feel free to raise an issue or reach out to the maintainer.
