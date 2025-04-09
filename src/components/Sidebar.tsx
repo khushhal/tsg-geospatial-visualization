@@ -23,6 +23,27 @@ const SectionTitle = ({ title }) => (
   </div>
 );
 
+const InstructionsCard = () => (
+  <Card className="mt-4">
+    <CardHeader className="py-3">
+      <CardTitle className="text-sm font-medium flex items-center">
+        <Info className="w-4 h-4 mr-2 text-blue-500" />
+        Instructions
+      </CardTitle>
+    </CardHeader>
+    <CardContent className="py-2">
+      <ul className="text-xs text-gray-600 space-y-2 list-disc pl-4">
+        <li>Click on the map to explore nearby cities</li>
+        <li>Click on the regions to see detailed demographic data</li>
+        <li>
+          Use the dropdown to switch between state, county, and city boundaries
+        </li>
+        <li>Draw polygon using the polygon tool for custom area queries</li>
+      </ul>
+    </CardContent>
+  </Card>
+);
+
 const Sidebarr: React.FC<SidebarrProps> = ({ censusProfile }) => {
   if (!censusProfile) {
     return (
@@ -50,6 +71,7 @@ const Sidebarr: React.FC<SidebarrProps> = ({ censusProfile }) => {
             Hover on a location on the map to view detailed demographic data
           </p>
         </div>
+        <InstructionsCard />
       </div>
     );
   }
@@ -142,25 +164,7 @@ const Sidebarr: React.FC<SidebarrProps> = ({ censusProfile }) => {
           View in QuickFacts
         </a>
       </div>
-      <Card className="mt-4">
-        <CardHeader className="py-3">
-          <CardTitle className="text-sm font-medium flex items-center">
-            <Info className="w-4 h-4 mr-2 text-blue-500" />
-            Instructions
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="py-2">
-          <ul className="text-xs text-gray-600 space-y-2 list-disc pl-4">
-            <li>Click on the map to explore nearby cities</li>
-            <li>Click on the regions to see detailed demographic data</li>
-            <li>
-              Use the dropdown to switch between state, county, and city
-              boundaries
-            </li>
-            <li>Draw polygon using the polygon tool for custom area queries</li>
-          </ul>
-        </CardContent>
-      </Card>
+      <InstructionsCard />
     </div>
   );
 };
