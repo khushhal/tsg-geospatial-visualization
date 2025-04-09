@@ -63,7 +63,7 @@ npm run dev
 This will start the Vite dev server, usually at:
 
 ```bash
-http://localhost:5173
+http://localhost:8080
 ```
 
 Make sure your backend (Django API) is running on http://127.0.0.1:8000 before testing the frontend.
